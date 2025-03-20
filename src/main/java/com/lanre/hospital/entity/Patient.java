@@ -10,39 +10,36 @@ import java.time.LocalDate;
 public class Patient {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @Column(name="patient_id")
+    private Long patientId;
     @Column(name = "first_name")
-   private String firstName;
+    private String firstName;
     @Column(name = "last_name")
-   private String lastName;
+    private String lastName;
     @Column(name = "date_of_birth")
-     private LocalDate dateOfBirth;
-    @Column(name="gender")
-     @Enumerated(EnumType.STRING)
-     private Gender gender;
-    @Column(name="contact_number")
-     private String contactNumber;
-    @Column(name="email")
-     private String email;
-    @Column(name="address")
-      private String address;
-    @Column(name="emergency_contact")
+    private LocalDate dateOfBirth;
+    @Enumerated(EnumType.STRING)
+    private Gender gender;
+    @Column(name = "contact_number")
+    private String contactNumber;
+    private String email;
+    private String address;
+    @Column(name = "emergency_contact")
     private String emergencyContact;
-    @Column(name="blood_type")
+    @Column(name = "blood_type")
     private String bloodType;
-    @Column(name="allergies")
     private String allergies;
-    @Column(name="medical_history")
-       private String medicalHistory;
+    @Column(name = "medical_history")
+    private String medicalHistory;
 
        //Getter and Setter
 
     public Long getId() {
-        return id;
+        return patientId;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setId(Long patientId) {
+        this.patientId = patientId;
     }
 
     public String getFirstName() {
@@ -143,11 +140,11 @@ public class Patient {
     public Patient() {
     }
 
-    public Patient(Long id, String firstName, String lastName,
+    public Patient(Long patientId, String firstName, String lastName,
                    LocalDate dateOfBirth, Gender gender, String contactNumber,
                    String email, String address, String emergencyContact,
                    String bloodType, String allergies, String medicalHistory) {
-        this.id = id;
+        this.patientId = patientId;
         this.firstName = firstName;
         this.lastName = lastName;
         this.dateOfBirth= dateOfBirth;
