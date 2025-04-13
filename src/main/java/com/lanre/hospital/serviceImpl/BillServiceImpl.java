@@ -40,6 +40,6 @@ public class BillServiceImpl implements BillService {
         bill.setDateIssued(LocalDate.now());
         bill.setBalance(request.getTotalAmount()-request.getPaidAmount());
         billRepo.save(bill);
-        return new ApiResponse<>(AppUtil.SUCCESS, AppCode.CREATED,"This bill " + bill.toString() + " has been created");
+        return new ApiResponse<>(AppUtil.SUCCESS, AppCode.CREATED,"This bill " + bill + " has been created");
     }
 }

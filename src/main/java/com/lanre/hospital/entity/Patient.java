@@ -26,6 +26,9 @@ public class Patient {
     private Gender gender;
     @OneToOne(mappedBy = "patient")
     private Appointment appointment;
+    @OneToOne(mappedBy = "patient")
+    @JoinColumn(name = "wallet_id")
+    private Wallet wallet;
     @Column(name = "contact_number")
     private String contactNumber;
     private String email;
